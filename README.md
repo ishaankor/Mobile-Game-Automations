@@ -53,52 +53,52 @@ This project automates certain tasks in a mobile game using image recognition an
     ```
 
 ## Usage
-1. Ensure the game is running and the screen resolution matches the images in the [Images](http://_vscodecontentref_/1) directory.
+1. Ensure the game is running and the screen resolution matches the images in the `Images` directory.
 2. Run the script:
     ```sh
     python main.py
     ```
-3. The script will start automating the tasks based on the images and confidence levels defined in the [automation_series](http://_vscodecontentref_/2) list.
+3. The script will start automating the tasks based on the images and confidence levels defined in the `automation_series` list.
 
 ## Functions
-### [get_mouse_position()](http://_vscodecontentref_/3)
+### get_mouse_position()
 Prints the current mouse position every second. Useful for debugging and finding coordinates on the screen.
 
-### [compare_image(image_1, image_2)](http://_vscodecontentref_/4)
+### compare_image(image_1, image_2)
 Compares two images and returns `True` if they are similar based on a predefined threshold.
 
-### [get_image_difference(image_1, image_2)](http://_vscodecontentref_/5)
+### get_image_difference(image_1, image_2)
 Calculates the difference between two images using histogram comparison and template matching.
 
-### [find_current_screen(filename='./Images/current_screen.png')](http://_vscodecontentref_/6)
+### find_current_screen(filename='./Images/current_screen.png')
 Takes a screenshot of the current screen and saves it to the specified filename.
 
-### [wait_after_loading_screen()](http://_vscodecontentref_/7)
+### wait_after_loading_screen()
 Waits for the loading screen to disappear by checking for specific elements on the screen.
 
-### [check_screen_after_loading_screen()](http://_vscodecontentref_/8)
+### check_screen_after_loading_screen()
 Checks for additional pop-ups or messages after the loading screen and handles them.
 
-### [wait_until_element_appears(filename, confidence_level=0.9, click_option=False)](http://_vscodecontentref_/9)
+### wait_until_element_appears(filename, confidence_level=0.9, click_option=False)
 Waits until a specific element appears on the screen and optionally clicks it.
 
-### [check_for_errors()](http://_vscodecontentref_/10)
+### check_for_errors()
 Checks for common error messages and attempts to resolve them.
 
-### [reposition_island()](http://_vscodecontentref_/11)
+### reposition_island()
 Repositions the game view to a known state.
 
-### [get_tuple_index(current_file, file_confidence)](http://_vscodecontentref_/12)
-Returns the index of a file in the [automation_series](http://_vscodecontentref_/13) list.
+### get_tuple_index(current_file, file_confidence)
+Returns the index of a file in the `automation_series` list.
 
-### [fix_automation(file, confidence)](http://_vscodecontentref_/14)
+### fix_automation(file, confidence)
 Attempts to fix the automation if it gets stuck on a specific file.
 
-### [event_currency_automation()](http://_vscodecontentref_/15)
+### event_currency_automation()
 Main function that runs the automation loop.
 
-### [calculate_proper_drag(current_x, current_y, found_island)](http://_vscodecontentref_/16)
+### calculate_proper_drag(current_x, current_y, found_island)
 Calculates the drag distance to reposition the game view.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](http://_vscodecontentref_/17) file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
