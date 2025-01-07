@@ -61,43 +61,43 @@ This project automates certain tasks in a mobile game using image recognition an
 3. The script will start automating the tasks based on the images and confidence levels defined in the `automation_series` list.
 
 ## Functions
-### get_mouse_position()
+### `get_mouse_position()`
 Prints the current mouse position every second. Useful for debugging and finding coordinates on the screen.
 
-### compare_image(image_1, image_2)
+### `compare_image(image_1, image_2)`
 Compares two images and returns `True` if they are similar based on a predefined threshold.
 
-### get_image_difference(image_1, image_2)
+### `get_image_difference(image_1, image_2)`
 Calculates the difference between two images using histogram comparison and template matching.
 
-### find_current_screen(filename='./Images/current_screen.png')
+### `find_current_screen(filename='./Images/current_screen.png')`
 Takes a screenshot of the current screen and saves it to the specified filename.
 
-### wait_after_loading_screen()
+### `wait_after_loading_screen()`
 Waits for the loading screen to disappear by checking for specific elements on the screen.
 
-### check_screen_after_loading_screen()
+### `check_screen_after_loading_screen()`
 Checks for additional pop-ups or messages after the loading screen and handles them.
 
-### wait_until_element_appears(filename, confidence_level=0.9, click_option=False)
+### `wait_until_element_appears(filename, confidence_level=0.9, click_option=False)`
 Waits until a specific element appears on the screen and optionally clicks it.
 
-### check_for_errors()
+### `check_for_errors()`
 Checks for common error messages and attempts to resolve them.
 
-### reposition_island()
+### `reposition_island()`
 Repositions the game view to a known state.
 
-### get_tuple_index(current_file, file_confidence)
+### `get_tuple_index(current_file, file_confidence)`
 Returns the index of a file in the `automation_series` list.
 
-### fix_automation(file, confidence)
+### `fix_automation(file, confidence)`
 Attempts to fix the automation if it gets stuck on a specific file.
 
-### event_currency_automation()
+### `event_currency_automation()`
 Main function that runs the automation loop.
 
-### calculate_proper_drag(current_x, current_y, found_island)
+### `calculate_proper_drag(current_x, current_y, found_island)`
 Calculates the drag distance to reposition the game view.
 
 ## License
