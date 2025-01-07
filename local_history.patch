@@ -1,0 +1,76 @@
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	
++++ b/main.py	(date 1687735613281)
+@@ -50,20 +50,13 @@
+                     print(f"{filename} was clicked, resuming automation...")
+                     if next_image is not None:
+                         time.sleep(1)
+-                        while True:
+-                            try:
+-                                if pyautogui.locateOnScreen(next_image[0], confidence=next_image[1]):
+-                                    print("TRUE")
+-                                    automation_status = False
+-                                    break
+-                                elif pyautogui.locateOnScreen(filename, confidence=confidence_level):
+-                                    automation_status = True
+-                                    break
+-                                else:
+-                                    check_for_errors()
+-                            except TypeError:
+-                                print("FALSE")
+-                                pass
++                        try:
++                            if pyautogui.locateOnScreen(next_image, confidence=confidence_level):
++                                print("TRUE")
++                                automation_status = False
++                        except TypeError:
++                            print("FALSE")
++                            automation_status = True
+                     else:
+                         automation_status = False
+                 else:
+@@ -83,9 +76,9 @@
+ 
+ 
+ def check_for_errors():
+-    time.sleep(3)
++    time.sleep(1)
+     try:
+-        if pyautogui.center(pyautogui.locateOnScreen('connection_error.png', confidence=0.9)):
++        if pyautogui.center(pyautogui.locateOnScreen('connection_error_message.png', confidence=0.9)):
+             print("Internet connection error detected!")
+             time.sleep(1)
+             try_again_button = pyautogui.center(pyautogui.locateOnScreen('try_again_button.png', confidence=0.9))
+@@ -109,20 +102,20 @@
+ 
+ def event_currency_automation():
+     while True:
+-        wait_until_element_appears('breeding_cave.png', next_image=('retry_button.png', 0.7), confidence_level=0.7, click_option=True)
+-        wait_until_element_appears('retry_button.png', next_image=('breed_button.png', 0.8), confidence_level=0.7, click_option=True)
++        wait_until_element_appears('breeding_cave.png', next_image='retry_button.png', confidence_level=0.7, click_option=True)
++        wait_until_element_appears('retry_button.png', next_image='breed_button.png', confidence_level=0.7, click_option=True)
+         wait_until_element_appears('breed_button.png', confidence_level=0.8, click_option=True)
+-        wait_until_element_appears('breeding_cave.png', next_image=('place_in_nursery_button.png', 0.9), confidence_level=0.6, click_option=True)
++        wait_until_element_appears('breeding_cave.png', next_image='place_in_nursery_button.png', confidence_level=0.6, click_option=True)
+         wait_until_element_appears('place_in_nursery_button.png', click_option=True)
+         wait_until_element_appears('island_border.png', confidence_level=0.7)
+         pyautogui.drag(-300, 0, 1)
+-        wait_until_element_appears('egg_nursery.png', next_image=('leaf_egg.png', 0.9), confidence_level=0.7, click_option=True)
+-        wait_until_element_appears('leaf_egg.png', next_image=('sell_button.png', 0.9), click_option=True)
+-        wait_until_element_appears('sell_button.png', next_image=('yes_button.png', 0.9), click_option=True)
++        wait_until_element_appears('egg_nursery.png', next_image='leaf_egg.png', confidence_level=0.7, click_option=True)
++        wait_until_element_appears('leaf_egg.png', next_image='sell_button.png', confidence_level=0.7, click_option=True)
++        wait_until_element_appears('sell_button.png', next_image='yes_button.png', click_option=True)
+         wait_until_element_appears('yes_button.png', click_option=True)
+         wait_until_element_appears('island_border.png', confidence_level=0.7)
+         pyautogui.drag(300, 0, 1)
+ 
+ 
+ if __name__ == "__main__":
+-    check_for_errors()
++    event_currency_automation()
